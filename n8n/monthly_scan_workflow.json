@@ -1,0 +1,8 @@
+{
+  "name": "Personal Web Agent - Monthly Scan Approval Queue",
+  "nodes": [
+    {"parameters":{"rule":{"interval":[{"field":"months","triggerAtDayOfMonth":1,"triggerAtHour":10}]}},"id":"monthly-trigger","name":"Monthly Trigger","type":"n8n-nodes-base.scheduleTrigger","typeVersion":1.2,"position":[260,300]},
+    {"parameters":{"method":"POST","url":"={{ $env.FASTAPI_BASE_URL + '/v1/n8n/scan-start' }}","sendHeaders":true,"headerParameters":{"parameters":[{"name":"X-N8N-Token","value":"={{ $env.N8N_WEBHOOK_TOKEN }}"}]},"options":{}},"id":"call-fastapi","name":"Create Scan Approval Task","type":"n8n-nodes-base.httpRequest","typeVersion":4.2,"position":[500,300]}
+  ],
+  "connections":{"Monthly Trigger":{"main":[[{"node":"Create Scan Approval Task","type":"main","index":0}]]}},"active":false,"settings":{},"versionId":"personal-web-agent-v1"
+}

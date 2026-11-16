@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: personal-web-agent-postgres
+    environment:
+      POSTGRES_DB: webagent
+      POSTGRES_USER: agent
+      POSTGRES_PASSWORD: change-this-password
+    ports: ["5432:5432"]
+    volumes: ["postgres_data:/var/lib/postgresql/data"]
+    restart: unless-stopped
+volumes:
+  postgres_data:

@@ -1,0 +1,6 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Personal Web Agent</title><link rel="stylesheet" href="sidepanel.css"></head><body>
+<header><h1>Personal Web Agent</h1><p>Suggestions only. Review before using.</p></header>
+<section><label>Backend URL<input id="apiUrl" value="http://127.0.0.1:8000"></label><label>API key<input id="apiKey" type="password" placeholder="Bearer API key"></label><button id="saveSettings">Save settings</button></section>
+<section><button id="scanForm">Inspect active page form</button><p id="status" role="status"></p></section>
+<section><label>Instruction<textarea id="instruction" rows="3">Suggest values for visible form fields using my saved profile and project vault. Do not submit.</textarea></label><button id="getSuggestions">Get suggestions</button></section>
+<section><h2>Agent response</h2><pre id="response"></pre></section><section><h2>Field metadata</h2><pre id="fields"></pre></section><script src="sidepanel.js"></script></body></html>

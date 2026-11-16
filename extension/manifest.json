@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Personal Web Agent",
+  "version": "0.1.0",
+  "description": "User-invoked form suggestions from your local Personal Web Agent backend.",
+  "permissions": ["storage", "activeTab", "sidePanel"],
+  "host_permissions": ["http://127.0.0.1:8000/*", "http://localhost:8000/*"],
+  "action": { "default_title": "Open Personal Web Agent" },
+  "background": { "service_worker": "background.js" },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "content_scripts": [{ "matches": ["http://*/*", "https://*/*"], "js": ["content.js"], "run_at": "document_idle" }],
+  "options_page": "options.html"
+}
